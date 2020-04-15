@@ -9,7 +9,9 @@ export class DatabindingexComponent implements OnInit {
 
   username='';
   btnStatus=false;
+  showSecret =false;
   serverCreationstatus="No server created ";
+  logs=[];
 
   constructor() { 
     setTimeout(()=>{
@@ -23,6 +25,9 @@ export class DatabindingexComponent implements OnInit {
   resetUser(){
     this.username="";
   }
-  
+  getData(){
+    this.showSecret =!this.showSecret;
+    this.logs.push(this.logs.length+1);
+  }
   
 }

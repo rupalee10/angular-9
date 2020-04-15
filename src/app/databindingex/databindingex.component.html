@@ -1,6 +1,20 @@
-
+<!--Example for Data Binding ,Atrribute binding ,Event Binding,String Interpolations-->
+<hr>
+<h5>Below are the examples for Data Binding</h5>
 <input type="text" [(ngModel)]="username" >
 <button class="btn btn-primary" [disabled]="username===''" (click)="resetUser()">Reset User</button>
 
 
 <p>{{username}}</p>
+
+<!--Example for Diective-->
+<hr>
+<h5>Below are the examples for structral dierectives</h5>
+<button class="btn btn-primary" (click)="getData()">Display Details</button>
+<!--<button class="btn btn-primary" (click)="showSecret =!showSecret">Display Details</button>-->
+<p *ngIf='showSecret'>Secret password =tuna</p>
+
+<div *ngFor="let log of logs" [ngStyle]="{backgroundColor: log>=5 ? 'blue':'transparent'}"
+    [ngClass]="{'white-txt' :log >=5}">
+    {{log}}
+</div>
