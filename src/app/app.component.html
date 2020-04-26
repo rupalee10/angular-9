@@ -1,2 +1,28 @@
 <hello name="{{ name }}"></hello>
-<app-databindingex></app-databindingex>
+<!--<app-databindingex></app-databindingex>-->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+                <app-list-item-a  [selected]="selected" (valueChange)='addItem($event)'></app-list-item-a>
+        </div>
+
+        <div class="col-md-2">
+            <button class="btn btn-primary">ADD</button>
+         </div>
+
+        <div class="col-md-4">
+                <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                  <ul class="list-group" *ngFor="let c1 of currentList">
+                                          <li class="list-group-item" [ngClass]="{'active':selectedItem==c1}" (click)="moveToLeft($event,c1)">{{c1.name}}</li>
+                                      </ul>      
+                            </div>
+                        </div>
+                      </div>
+        </div>
+    </div>
+   
+</div>

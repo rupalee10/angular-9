@@ -1,0 +1,12 @@
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-6">
+            <ul class="list-group" *ngFor="let c1 of country">
+                    <li class="list-group-item" [ngClass]="{'active':selectedItem==c1}" (click)="moveToLeft($event,c1)">{{c1.name}}</li>
+                </ul>      
+      </div>
+  </div>
+</div>
+
+
