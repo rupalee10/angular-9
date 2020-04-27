@@ -6,14 +6,15 @@
                     <li class="list-group-item" [ngClass]="{'active':selectedItem==c1}" (click)="moveToLeft($event,c1)">{{c1.name}}</li>
                 </ul>      
       </div>
+      <div class="col-md-2">
+         <button class="btn btn-primary" (click)="addItem()">ADD</button>
+      </div>
   </div>
 </div>
 
 <br>
 
-<div class="col-md-2">
-  <button class="btn btn-primary" (click)="addItem()">ADD</button>
-</div>
+
 
 
 
