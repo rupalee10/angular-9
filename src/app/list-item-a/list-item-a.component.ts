@@ -26,7 +26,7 @@ export class ListItemAComponent implements OnInit {
   moveToLeft(event,newValue){
     console.log(event.target.innerTexti);
     this.selectedItem = newValue; 
-    this.valueChange.emit(this.selectedItem);
+ //   this.valueChange.emit(this.selectedItem);
 
   }
   addItem(){
