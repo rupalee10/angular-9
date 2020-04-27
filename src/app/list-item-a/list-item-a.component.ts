@@ -29,4 +29,7 @@ export class ListItemAComponent implements OnInit {
     this.valueChange.emit(this.selectedItem);
 
   }
+  addItem(){
+    this.valueChange.emit(this.selectedItem);
+  }
 }
