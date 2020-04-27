@@ -1,21 +1,30 @@
 
 <div class="container">
   <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-3">
             <ul class="list-group" *ngFor="let c1 of country">
                     <li class="list-group-item" [ngClass]="{'active':selectedItem==c1}" (click)="moveToLeft($event,c1)">{{c1.name}}</li>
                 </ul>      
       </div>
       <div class="col-md-2">
-         <button class="btn btn-primary" (click)="addItem()">ADD</button>
-         
+
+            <div class="btn-group-vertical">
+                    <button type="button" class="btn btn-primary" (click)="addItem()">Add</button><br>
+                    <button type="button" class="btn btn-primary"(click)="removeItem(currentIndex)">Remove</button><br>
+                    <button type="button" class="btn btn-primary" (click)="addAll()">Add All</button><br>
+                    <button type="button" class="btn btn-primary" (click)="removeAll()">Remove All</button><br>
+                  </div>
+                  <div class="alert alert-danger" role="alert" *ngIf="errorMsg!=''">
+                  {{errorMsg}}
+                  </div>
       </div>
+      <div class="col-md-3">
+            <ul class="list-group" *ngFor="let data of currentList;let i=index;" >
+                    <li class="list-group-item" [ngClass]="{'active':slectedItemB==data}" (click)="moveToRight($event,data,i)">{{data.name}}</li>
+                </ul>      
+      </div>
+
   </div>
 </div>
-
-<br>
-
-
-
 
 

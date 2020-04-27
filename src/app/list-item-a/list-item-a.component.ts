@@ -12,24 +12,61 @@ export class ListItemAComponent implements OnInit {
   @Input() selected: string;
   @Output() valueChange = new EventEmitter();
   selectedItem;
+  errorMsg="";
+  slectedItemB;
   currentList=[];
-
-  
-
+  tmpList =[];
+  selectedValue;
+  currentIndex:Number;
   constructor() {
-    //console.log(selected);
+
    }
 
   ngOnInit(): void {
   }
 
   moveToLeft(event,newValue){
-    console.log(event.target.innerTexti);
     this.selectedItem = newValue; 
- //   this.valueChange.emit(this.selectedItem);
-
   }
+  moveToRight(event,newOne,index){
+    this.currentIndex=index;
+    this.slectedItemB = newOne; 
+    console.log(this.currentIndex);
+  }
+
   addItem(){
-    this.valueChange.emit(this.selectedItem);
+     // this.valueChange.emit(this.selectedItem);
+     if(this.currentList.includes(this.selectedItem)){
+         this.errorMsg = "Already added";
+     }
+      else{
+        this.currentList.push(this.selectedItem);
+      }
+  
+  }
+
+  removeItem(i){
+
+    if(typeof this.currentList !== 'undefined' && this.currentList.length > 0){
+        let newItems = this.currentList.filter(function(e, index){
+          return i != index; 
+        })
+        this.currentList =  newItems;
+     }
+     else
+     this.errorMsg = "List B is empty!!Add Element";
+  }
+
+  removeAll(){
+    if(typeof this.currentList !== 'undefined' && this.currentList.length > 0){
+        this.currentList=[];
+    }
+    else{
+      this.errorMsg = "List B is empty!!Add Element";
+    }
+  }
+
+  addAll(){
+    this.currentList = this.country;
   }
 }
